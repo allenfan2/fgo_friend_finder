@@ -16,5 +16,5 @@ def home(request):
 
 
 def info(request):
-    return render(request, 'matcher/info.html')
+    return render(request, 'matcher/info.html', {'title': 'Info'})
 
