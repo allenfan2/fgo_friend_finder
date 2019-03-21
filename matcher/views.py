@@ -1,12 +1,20 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 # Create your views here.
 
 
+data = [
+    {'name': 'Bob'},
+    {'name': 'Jack'}
+]
+
+
 def home(request):
-    return render(request, 'matcher/' )
+    context = {
+        'peoples': data
+    }
+    return render(request, 'matcher/home.html', context)
 
 
 def info(request):
-    return HttpResponse('<h1>Info Here</h1>')
+    return render(request, 'matcher/info.html')
 
